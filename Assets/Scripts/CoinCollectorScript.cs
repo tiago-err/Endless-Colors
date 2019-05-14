@@ -10,7 +10,7 @@ public class CoinCollectorScript : MonoBehaviour
     public Canvas coinCanvas;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         coinCanvas.GetComponentInChildren<Text>().text = coinCounter.ToString();
     }
@@ -26,7 +26,6 @@ public class CoinCollectorScript : MonoBehaviour
         if (collision.gameObject.tag == "Coin")
         {
             coinCounter++;
-            Debug.Log("More coins! " + coinCounter);
         }
     }
 }
