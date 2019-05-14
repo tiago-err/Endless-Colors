@@ -608,6 +608,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2915866022297078004, guid: 93f2ebd4ac7ba764295ecdca4bf0a591,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93f2ebd4ac7ba764295ecdca4bf0a591, type: 3}
 --- !u!1001 &3224439568735246889
@@ -732,6 +737,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7895712374647720748, guid: 1aaa4ca22979cbe41b875683e2682b6d,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aaa4ca22979cbe41b875683e2682b6d, type: 3}
 --- !u!1001 &6346976862824061674
