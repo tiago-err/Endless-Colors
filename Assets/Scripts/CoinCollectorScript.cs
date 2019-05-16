@@ -12,13 +12,13 @@ public class CoinCollectorScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        coinCanvas.GetComponentInChildren<Text>().text = coinCounter.ToString();
+       coinCanvas.GetComponentInChildren<Text>().text = coinCounter.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        coinCanvas.GetComponentInChildren<Text>().text = coinCounter.ToString();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,6 +26,8 @@ public class CoinCollectorScript : MonoBehaviour
         if (collision.gameObject.tag == "Coin")
         {
             coinCounter++;
+            coinCanvas.GetComponentInChildren<Text>().text = coinCounter.ToString();
+            Destroy(collision.gameObject);
         }
     }
 }

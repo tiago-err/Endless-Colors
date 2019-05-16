@@ -94,7 +94,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.022329688, y: 0.027912378}
@@ -133,8 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85499a5a28d7f6d42971cb80176d65e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointCanvas: {fileID: 8843092963111145123, guid: 93f2ebd4ac7ba764295ecdca4bf0a591,
-    type: 3}
+  pointCanvas: {fileID: 0}
 --- !u!114 &8362317544605665709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,5 +159,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7c5aa2af0efcf4184fafe9e8af7e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCanvas: {fileID: 3278953422146048736, guid: 1aaa4ca22979cbe41b875683e2682b6d,
-    type: 3}
+  coinCanvas: {fileID: 0}

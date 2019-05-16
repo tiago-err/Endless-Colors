@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ColorControlScript : MonoBehaviour
@@ -34,15 +35,25 @@ public class ColorControlScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Block") {
+        if (collision.gameObject.tag == "Block")
+        {
             if (!collision.gameObject.GetComponent<SpriteRenderer>().color.Equals(colors[colorNumber]))
             {
                 Destroy(gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             else
             {
                 points++;
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Switch")
+        {
+            changeColor();
         }
     }
 }
