@@ -23,7 +23,7 @@ public class BlockScript : MonoBehaviour
         Random random = new Random();
         GetComponent<SpriteRenderer>().color = colors[Random.Range(0, 3)];
         transform.localScale = new Vector3(Random.Range(0.15f, 1.6f), transform.localScale.y, transform.localScale.z);
-        initialPosition = this.gameObject.transform;
+        initialPosition = gameObject.transform;
         move = Random.Range(0, 100) <= movingProbability;
     }
 
@@ -36,11 +36,6 @@ public class BlockScript : MonoBehaviour
     public void enableMovement()
     {
         ableToMove = true;
-    }
-
-    public void disableMovement()
-    {
-        ableToMove = false;
     }
 
     private void FixedUpdate()

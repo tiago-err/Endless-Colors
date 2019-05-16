@@ -37,7 +37,7 @@ public class SpawningScript : MonoBehaviour
             numberBlocks++;
         }
 
-        if (((float) numberBlocks % spawnSpeedBlocks) == 0)
+        if (numberBlocks % spawnSpeedBlocks == 0)
         {
             if (timeBetweenBlocks > 0.5f)
             {
@@ -52,7 +52,7 @@ public class SpawningScript : MonoBehaviour
             }
         }
 
-        if (((float) numberBlocks % movingBlocks == 0))
+        if (numberBlocks % movingBlocks == 0)
         {
             block.GetComponent<BlockScript>().enableMovement();
             block.GetComponent<BlockScript>().movingProbability = block.GetComponent<BlockScript>().movingProbability == 50 ? block.GetComponent<BlockScript>().movingProbability : block.GetComponent<BlockScript>().movingProbability + 5;
