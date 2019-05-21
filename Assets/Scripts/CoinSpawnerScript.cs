@@ -13,7 +13,7 @@ public class CoinSpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        resetTimer();
+        timer = Random.Range(10, 30);
     }
 
     // Update is called once per frame
@@ -23,11 +23,11 @@ public class CoinSpawnerScript : MonoBehaviour
 
         if (timer <= 0)
         {
-            resetTimer();
+            spawnCoin();
         }
     }
 
-    void resetTimer()
+    void spawnCoin()
     {
         timer = Random.Range(10, 30);
         Vector3 position = new Vector3(transform.position.x + Random.Range(-range, range), transform.position.y, 0);

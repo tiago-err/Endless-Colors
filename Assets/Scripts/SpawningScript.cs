@@ -6,7 +6,8 @@ public class SpawningScript : MonoBehaviour
 {
     private float timer = 0f;
     public float timeBetweenBlocks = 1f;
-    private int numberBlocks = 0;
+    private int numberBlocks = 1;
+    private int numberBlocksMoving = 1;
     public int spawnSpeedBlocks = 5;
     public GameObject block;
 
@@ -18,10 +19,11 @@ public class SpawningScript : MonoBehaviour
     void Start()
     {
         block.GetComponent<BlockScript>().verticalSpeed = 3.5f;
+        block.GetComponent<BlockScript>().movingProbability = 25;
+        block.GetComponent<BlockScript>().ableToMove = false;
         timer = timeBetweenBlocks;
         Vector3 position = new Vector3(Random.Range(-range, range), transform.position.y, 0);
         Instantiate(block, position, Quaternion.identity);
-        numberBlocks++;
     }
 
     // Update is called once per frame
@@ -35,9 +37,10 @@ public class SpawningScript : MonoBehaviour
             Vector3 position = new Vector3(transform.position.x + Random.Range(-range, range), transform.position.y, 0);
             Instantiate(block, position, Quaternion.identity);
             numberBlocks++;
+            numberBlocksMoving++;
         }
 
-        if (numberBlocks % spawnSpeedBlocks == 0)
+        if (numberBlocks == spawnSpeedBlocks)
         {
             if (timeBetweenBlocks > 0.5f)
             {
@@ -50,12 +53,15 @@ public class SpawningScript : MonoBehaviour
                 }
                 
             }
+
+            numberBlocks = 0;
         }
 
-        if (numberBlocks % movingBlocks == 0)
+        if (numberBlocksMoving == movingBlocks)
         {
-            block.GetComponent<BlockScript>().enableMovement();
+            block.GetComponent<BlockScript>().ableToMove = true;
             block.GetComponent<BlockScript>().movingProbability = block.GetComponent<BlockScript>().movingProbability == 50 ? block.GetComponent<BlockScript>().movingProbability : block.GetComponent<BlockScript>().movingProbability + 5;
+            numberBlocksMoving = 0;
         }
     }
 }

@@ -7,7 +7,7 @@ public class BlockScript : MonoBehaviour
 
     private Color[] colors = { Color.red, Color.blue, Color.green };
     public float verticalSpeed;
-    private bool ableToMove = false;
+    public bool ableToMove = false;
     public float horizontalSpeed;
     private bool movingRight = false;
     private bool move = false;
@@ -25,17 +25,13 @@ public class BlockScript : MonoBehaviour
         transform.localScale = new Vector3(Random.Range(0.15f, 1.6f), transform.localScale.y, transform.localScale.z);
         initialPosition = gameObject.transform;
         move = Random.Range(0, 100) <= movingProbability;
+        Debug.Log(move + " " + ableToMove);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void enableMovement()
-    {
-        ableToMove = true;
     }
 
     private void FixedUpdate()
